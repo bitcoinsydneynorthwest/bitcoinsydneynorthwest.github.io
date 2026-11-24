@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bitcoin Sydney West</title>
+<title>Bitcoin Sydney North West</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
@@ -602,7 +602,7 @@
   <section id="hero">
     <div id="hero-collapse">
       <div class="eyebrow">NODE: WESTERN SYDNEY</div>
-      <h1>Bitcoin <span>Sydney West</span></h1>
+      <h1>Bitcoin <span>Sydney North West</span></h1>
     </div>
     <div id="hero-collapse-spacer"></div>
     <div id="genesis-space" aria-hidden="true"></div>
@@ -627,7 +627,7 @@
     <div class="panel-inner">
       <div class="eyebrow" style="justify-content:center;">Bitcoin, not crypto</div>
       <h2>One asset. One ledger.<br>No exceptions.</h2>
-      <img src="crew-photo.jpg" alt="The Bitcoin Sydney West crew at a meetup" class="ethos-photo">
+      <img src="crew-photo.jpg" alt="The Bitcoin Sydney North West crew at a meetup" class="ethos-photo">
       <p class="lede">We keep it simple on purpose. Every meetup, every conversation, every topic - it's all Bitcoin. If you're chasing the next token, this isn't your group. If you want to actually understand the thing that started it all, pull up a chair.</p>
       <div class="ledger">
         <div class="no">Altcoins &amp; "shitcoins"</div>
@@ -767,7 +767,7 @@
   <section id="support">
     <div class="eyebrow">Support the meetup</div>
     <h2>Stack sats, keep it running</h2>
-    <p>Bitcoin Sydney West is run by volunteers and covers its own costs - venue, printing, the odd round of coffee. Every sat helps keep it free to attend.</p>
+    <p>Bitcoin Sydney North West is run by volunteers and covers its own costs - venue, printing, the odd round of coffee. Every sat helps keep it free to attend.</p>
     <div class="donate-cards">
       <div class="donate-card">
         <div class="label">Lightning</div>
@@ -778,7 +778,7 @@
   </section>
 
   <footer>
-    Bitcoin Sydney West · <a href="#hero">Back to top ↑</a>
+    Bitcoin Sydney North West · <a href="#hero">Back to top ↑</a>
   </footer>
 
   <div id="code-modal-overlay" class="code-modal-overlay" aria-hidden="true">
@@ -1853,7 +1853,7 @@ try{
 /* ============ Countdown (driven by the next "Sydney West" event) ============ */
 function showNoMeetupFound(){
   const loc = document.getElementById('meetup-loc');
-  if(loc) loc.textContent = "Check Meetup for the next Sydney West date";
+  if(loc) loc.textContent = "Check Meetup for the next Sydney North West date";
   const countdownEl = document.getElementById('countdown');
   if(countdownEl) countdownEl.style.display = 'none';
 }
@@ -1861,7 +1861,8 @@ function showNoMeetupFound(){
 function startCountdownFromEvents(events){
   const now = Date.now();
   const nextSydneyWest = events.find(ev => {
-    if(!(ev.title||'').toLowerCase().includes('sydney west')) return false;
+    const title = (ev.title||'').toLowerCase();
+    if(!(title.includes('sydney west') || title.includes('sydney north west'))) return false;
     const t = new Date(ev.start).getTime();
     return !isNaN(t) && t > now; // guard against stale/outdated events.json data
   });
