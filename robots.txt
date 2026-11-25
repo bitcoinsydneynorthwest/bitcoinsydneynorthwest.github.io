@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bitcoinsydneynorthwest.github.io/sitemap.xml
